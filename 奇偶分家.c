@@ -2,17 +2,18 @@
 
 #include <stdio.h>
 int main()
-  {int N, i, odd, even;
-   0<N<=1000;
-   odd=0;even=0;
+  {int N, n, i, odd, even;
+   N>0 && N<=1000;
+   odd = 0; even = 0;
    scanf("%d\n",&N);
    for(i=1;i<=N;i++) {
-   printf("%d",i);
+   scanf("%d",&n);
+   if(n%2!=0) {
+   odd = odd + 1;
    }
-   if(i/2==0) {
-   odd=odd+1; 
+   if(n%2==0||n==0) {
+   even = even + 1;
    }
-   else(i/2==1) {
-   even=even+1; 
    }
+   printf("%d %d",odd,even);
    } 
