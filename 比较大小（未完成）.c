@@ -2,14 +2,14 @@
 int main()
   {int x, y, z, t;
    scanf("%d %d %d",&x,&y,&z);
-   if(x>=y) {
-   t=y;y=x;x=t;
+   if(x>y) {
+   t=x;x=y;y=t;
    }	
-   if(y>=z) {
-   t=z;z=y;y=t;
+   if(y>z) {
+   t=y;y=z;z=t;
    }
-   if(x>=z) {
-   t=z;z=x;x=t;
+   if(x>z) {
+   t=x;x=z;z=t;
    }
    printf("%d->%d->%d",x,y,z);
    return 0;
