@@ -14,6 +14,7 @@
 */
 
 /*解法一：使用库函数*/ 
+/*
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
@@ -36,41 +37,29 @@ int main()
     }
     return 0;
   }
-
+*/ 
 /*解法二：定义和调用函数*/
 #include <stdio.h>
 int pow(int remainder,int times) {
+	int t = remainder
 	for(int i=1;i<times;i++) {
-		remainder = remainder * remainder;
+		remainder = remainder * t;
 	}
 	return remainder;
 }
 int main()
-  {int N;
+  {int N, number, digit, sum=0, max;
    scanf("%d",&N);
-   
-  } 
-  
-  
-# include <stdio.h>
-int main (void)
-{
- int i,n,N;
- int number,digit,sum;
- scanf ("%d",&N);
- n=pow(10,N);
- 
- for(i=pow(10,N-1);i<n;i++)
- {
-  sum=0;
-  number=i;
-  while (number>0)
-  {
-  digit = pow(number%10,N);
-  number = number / 10;
-  sum =sum + digit;
-  }
-  if (sum==i) {
-   printf ("%d\n",sum);
-  }
- }
+   max = pow(10,N); /*最大范围*/
+    for(int i=pow(10,N-1);i<max;i++) {
+   		number = i;
+   		while (number>0) {
+  			digit = pow(number%10,N);
+  			number = number / 10;
+  			sum =sum + digit;
+    	}
+    	if (sum==i) {
+   			printf ("%d\n",sum);
+    	}
+    }
+   }  
