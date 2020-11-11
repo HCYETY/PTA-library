@@ -11,16 +11,11 @@
 输出样例:     2     3     5     7
 */ 
 
-/*
-编程思路：
- 
-*/
-
 #include<stdio.h>
 int main()
-  {int n, count=0, j;
+  {int n, count=0, i, j;
    scanf("%d",&n);
-	for(int i=2; i<=n; i++) {
+	for(i=2; i<=n; i++) {
 		for(j=2; j<=i; j++) {
 			if(i%j==0)	break;
     	}
