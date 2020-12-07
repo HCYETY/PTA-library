@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main()
-  {int i, j, m, a[m][m], max, x=0, y=0;
+  {int i, j, m, a[20][20], max;
+   int x=0, y=0;
    scanf ( "%d", &m );
    for ( i=0; i<m; i++ ) {
        for ( j=0; j<m; j++ ) {
@@ -17,5 +18,5 @@ int main()
             }
         }
    }
-    printf ( "max=%d,i=%d,j=%d", max, x, y );
+    printf ( "max=%d,i=%d,j=%d", max,x,y );
   }
