@@ -8,14 +8,14 @@ int main(void)
      printf("Invalid.");
    }
    while(i<=N) { 
-   x2 = x1;
-   x1 = x + x2;
-   x = x2; 
-   printf("%11d",x);
-   count++; 
-   if(count%5==0) {
-     printf("\n");
-   }
-   i++;  
+   	x2 = x1;
+   	x1 = x + x2;
+   	x = x2;
+   	printf("%11d",x);
+   	count++;
+   	if(count%5==0) {
+     		printf("\n");
+   	}
+   	i++;
   }
  }
