@@ -22,33 +22,36 @@ NO
 #include <bits/stdc++.h>
 using namespace std;
 
-bool is_ok(string line, int stack_max_size);
+bool isok(string line, int stack_max_size);
 
 int main()
 {
 	int n, m;
 	cin >> n >> m;
-	cin.ignore();
-	
+
 	for (int i = 0; i < n; i++) {
-		string line;
-		getline(cin, line);
-		if (is_ok(line, m))
+		char s_or_x[101];
+        cin>>s_or_x;
+		if (isok(s_or_x, m))
 			cout << "YES" << endl;
 		else
 			cout << "NO" << endl;
 	}
 }
 
-bool is_ok(string line, int stack_max_size)
+bool isok(string line, int stack_max_size)
 {
 	stack<int> istack;
-	for (int i = 0; i < line.size(); i++) {
-		if (line[i] == 'S') {
+	for (int i = 0; i < line.size(); i++)
+	{
+		if (line[i] == 'S')
+		{
 			if (istack.size() >= stack_max_size)
 				return false;
 			istack.push(i);
-		}  else if (line[i] == 'X') {
+		}
+		else if (line[i] == 'X')
+		{
 			if (istack.empty())
 				return false;
 			istack.pop();

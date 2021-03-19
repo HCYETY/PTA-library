@@ -27,14 +27,14 @@ using namespace std;
 int main()
 {
     char part;
-    string s;
+    string s; //
     int count=0;
     while((part=getchar())!='\n') {
         s += part;
         count++;
         while(count>=3 && s[count-1]=='M' && s[count-2]=='C' && s[count-3]=='A') {
             count -= 3;
-            s.erase(count);
+            s.erase(count); // erase()ÓÃÀ´É¾³ıÔªËØ
         }
     }
     if(count == 0)
