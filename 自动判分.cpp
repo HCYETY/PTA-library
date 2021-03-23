@@ -3,18 +3,13 @@
 
 输入格式:
 每个输入文件包含若干行字符串（每行至多20个字母），字符串有大写的W、L和E组成。其中E表示比赛信息结束，程序应该忽略E之后的所有内容。
-
 输出格式:
 输出由两部分组成，每部分有若干行，每一行对应一局比赛的比分（按比赛信息输入顺序）。其中第一部分是11分制下的结果，第二部分是21分制下的结果，两部分之间由一个空行分隔。
 
 输入样例:
-在这里给出一组输入。例如：
-
 WWWWWWWWWWWWWWWWWWWW
 WWLWE
 输出样例:
-在这里给出相应的输出。例如：
-
 11:0
 11:0
 1:1
@@ -27,7 +22,6 @@ WWLWE
 #include <string>
 using namespace std;
 
-//解析wls，打印比赛得分
 //wls里头是得分记录，max_num是每局得分上限，取11或21
 void handle_wls(string wls, int max_num);
 
@@ -36,32 +30,25 @@ int main()
 	string wls;
 	string line;
 	//1. 读入记录
-	while(cin>>line)
-	{
+	while(cin>>line) {
 		wls += line;
 	}
-	//cout<<wls<<endl;
-
 	handle_wls(wls, 11);
 	cout<<endl;
 	handle_wls(wls, 21);
 }
 
-void handle_wls(string wls, int max_num)
-{
+void handle_wls(string wls, int max_num) {
 	int win_num = 0;
 	int lose_num = 0;
-	for(int i=0; wls[i]!='E'; i++)
-	{
+	for(int i=0; wls[i]!='E'; i++) {
 		if (wls[i] == 'W')
 			win_num += 1;
 		else
 			lose_num += 1;
 		//11分一局，打印结果
-		if ((win_num >= max_num && win_num - lose_num >= 2)
-		      || (lose_num >= max_num && lose_num - win_num >= 2))
-
-		{
+		if((win_num>=max_num && win_num-lose_num>=2)
+		|| (lose_num>=max_num && lose_num-win_num>=2)) {
 			cout<<win_num<<":"<<lose_num<<endl;
 			win_num = 0;
 			lose_num = 0;
