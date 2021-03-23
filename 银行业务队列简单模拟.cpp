@@ -19,37 +19,38 @@ queue<int> s2; // B窗口存放偶数
 
 int main()
 {
-    int N, add, i;
+    int N, add, i; // N为顾客总数，add为顾客编号
     scanf("%d", &N);
     for(i=1; i<=N; i++) {
         scanf("%d ", &add);
-        if(add%2!=0) {
-            s1.push(add);
+        if(add%2!=0) { // 表示奇数
+            s1.push(add); // 则存放在s1
         } else {
             s2.push(add);
         }
     }
-    int flag=0;
+    int flag=0; // 用于在输出空格时做标记
     while(!s1.empty()) {
         int num=2;
         while(num-- && !s1.empty()) {
-            if(flag++) {
+            if(flag==1) {
                 cout<<" ";
             }
             cout<<s1.front();
+            flag=1;
             s1.pop();
         }
         if(!s2.empty()){
-            cout << " ";
-            cout << s2.front();
+            cout<<" "<<s2.front();
             s2.pop();
         }
     }
     while(!s2.empty()){
-		if(flag++){
-			cout << " ";
-		}
-		cout << s2.front();
-		s2.pop();
-	}
+        if(flag==1) {
+            cout<<" ";
+        }
+        cout<<s2.front();
+        flag=1;
+        s2.pop();
+    }
 }
