@@ -20,11 +20,11 @@ using namespace std;
 int main()
 {
     int n, num[1000], x, count=0;
-    cin>>n;
+    cin>>n; // n个整数
     for(int i=0; i<n; i++) {
         cin>>num[i];
     }
-    cin>>x;
+    cin>>x; // 要查找的数
     int left=0, right=n-1, mid, flag=0;
     while(left <= right) {
         flag++;
@@ -37,7 +37,7 @@ int main()
         } else if(num[mid] < x) {
             left = mid + 1;
         }
-		  if(left > 1){
+        if(left > 1){
             cout<<"-1"<<endl<<flag;
             return 0;
         }
