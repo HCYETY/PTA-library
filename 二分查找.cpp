@@ -15,17 +15,17 @@
 2
 
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int n, num[1000], x, count=0;
+    int n, num[1000], x;
     cin>>n; // n个整数
     for(int i=0; i<n; i++) {
         cin>>num[i];
     }
     cin>>x; // 要查找的数
-    int left=0, right=n-1, mid, flag=0;
+    int left=0, right=n-1, flag=0, mid;
     while(left <= right) {
         flag++;
         mid = (left + right) / 2;
@@ -37,7 +37,7 @@ int main()
         } else if(num[mid] < x) {
             left = mid + 1;
         }
-        if(left > 1){
+        if(left > right){
             cout<<"-1"<<endl<<flag;
             return 0;
         }
