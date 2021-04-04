@@ -18,9 +18,7 @@
 10000 23333 44444 55555 88888
 
 
-#include <iostream>
-#include <string>
-#include <set>
+#include <bits/stdc++.h>
 using namespace std;
 
 //结构体存储情侣关系
@@ -31,7 +29,7 @@ struct  lovers{
 
 int main()
 {
-    int n, m;
+    int n, m; // n为已知夫妻或伴侣的对数，m为参加派对的总人数
     cin>>n;
     struct lovers l[n+1] ;
     for(int i=0; i<n; i++) {
@@ -42,17 +40,17 @@ int main()
     for(int i=0; i<m; i++) {
         string id;
         cin>>id;
-        dan.insert(id) ;
+        dan.insert(id);
     }
-    int count=m;
     for(int i=0; i<m; i++) {
+        //如果情侣两个人都在客人名单中，则将其删除
         if(dan.count(l[i].s1)==1 && dan.count(l[i].s2)==1) {
             dan.erase(l[i].s1);
             dan.erase(l[i].s2);
         }
     }
     set<string>::iterator it = dan.begin() ;
-    cout<<dan.size()<<endl ;
+    cout<<dan.size()<<endl ;  // 落单客人的总人数
     if(!dan.empty()) {
         cout<<*it ;
         it++;
