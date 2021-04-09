@@ -36,15 +36,15 @@ struct TreeNode
 	}
 };
 
-int sign = 0;
+int G_yjbl = 0;
 //打印结点编号。 
 void print_node(NodeId number)
 {
-	if (sign == 0)
+	if (G_yjbl == 0)
 		cout<<number;
 	else
 		cout<<" "<<number;
-	sign += 1;
+	G_yjbl += 1;
 }
 
 //传入树/子树tree，根结点root
@@ -68,15 +68,15 @@ int main()
 	}
 	NodeId root = 1;  //1号结点是根节点 
 	//先序遍历
-	sign = 0;
+	G_yjbl = 0;
 	preorder(tree, 1); 
 	cout<<endl;
 	//中序遍历 
-	sign = 0;
+	G_yjbl = 0;
 	inorder(tree, 1); 
 	cout<<endl;
 	//后序遍历
-	sign = 0;
+	G_yjbl = 0;
 	postorder(tree, 1); 
 	cout<<endl;	
 }
