@@ -127,13 +127,8 @@ void levelorder(TreeNode* root)
 
 int height(TreeNode* root)
 {
-	if(root == NULL)
-		return 0;
-		
+	if(root == NULL) return 0;
 	int left_height = height(root->lchild);
 	int right_height = height(root->rchild);
-	if (left_height > right_height)
-		return left_height + 1;
-	else
-		return right_height + 1;
+   return left_height > right_height ? left_height+1 : right_height+1;
 }
